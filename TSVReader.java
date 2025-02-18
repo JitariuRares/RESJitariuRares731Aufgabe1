@@ -9,9 +9,19 @@ public class TSVReader {
         List<Game> games = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+
             String line = br.readLine();
+
             while ((line = br.readLine()) != null) {
-                String[] fields = line.split("\t");
+
+                String[] fields = line.trim().split("\\s+");
+
+
+                if (fields.length < 6) {
+                    System.err.println("Linie invalidă: " + line);
+                    continue;
+                }
+
                 int id = Integer.parseInt(fields[0]);
                 String held = fields[1];
                 String antagonist = fields[2];
@@ -24,6 +34,8 @@ public class TSVReader {
             }
         } catch (IOException e) {
             System.err.println("Error reading TSV file: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Error converting number: " + e.getMessage());
         }
 
         return games;

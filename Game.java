@@ -6,7 +6,7 @@ public class Game {
     private String ort;
     private int globalerEinfluss;
 
-    public Game(int id, String team1, String team2, String date, String city, int capacity) {
+    public Game(int id, String held, String antagonist, String konfrontationsTyp, String ort, int globalerEinfluss) {
         this.id = id;
         this.held = held;
         this.antagonist = antagonist;
@@ -41,7 +41,7 @@ public class Game {
 
     @Override
     public String toString() {
-        return konfrontationsTyp + ": " + held + " vs " + antagonist + " - ort: " + ort + " (globarer einfluss: " + globalerEinfluss + ")";
+        return konfrontationsTyp + ": " + held + " vs " + antagonist
+                + " - ort: " + ort + " (globaler Einfluss: " + globalerEinfluss + ")";
     }
 }
-
