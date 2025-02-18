@@ -11,6 +11,7 @@ public class GameProcessor {
                 .filter(game -> game.getGlobalerEinfluss() >= min)
                 .collect(Collectors.toList());
     }
+
 }
 
 
