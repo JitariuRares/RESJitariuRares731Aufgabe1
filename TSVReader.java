@@ -18,7 +18,7 @@ public class TSVReader {
 
 
                 if (fields.length < 6) {
-                    System.err.println("Linie invalidă: " + line);
+                    System.err.println("Linie invalida: " + line);
                     continue;
                 }
 
